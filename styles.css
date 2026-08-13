@@ -1,0 +1,821 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f9fc;
+    color: #17212b;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   NAVEGACIÓN
+========================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(8, 30, 45, 0.94);
+    backdrop-filter: blur(10px);
+}
+
+.navbar {
+    max-width: 1200px;
+    height: 75px;
+    margin: auto;
+
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #55d6be;
+}
+
+.menu-btn {
+    display: none;
+
+    border: none;
+    background: transparent;
+    color: white;
+
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #06283d,
+            #136c8b,
+            #1ba7a0
+        );
+
+    color: white;
+
+    padding: 130px 8% 80px;
+}
+
+.hero-content {
+    max-width: 760px;
+    position: relative;
+    z-index: 5;
+}
+
+.tag {
+    display: inline-block;
+
+    padding: 8px 16px;
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50px;
+
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.95;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: #55d6be;
+}
+
+.hero p {
+    max-width: 650px;
+
+    font-size: 1.15rem;
+
+    color: rgba(255,255,255,0.85);
+
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 15px 24px;
+
+    border-radius: 50px;
+
+    background: white;
+    color: #073b4c;
+
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+.hero-decoration {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+}
+
+.sun {
+    position: absolute;
+
+    right: 12%;
+    top: 20%;
+
+    font-size: 8rem;
+
+    opacity: 0.25;
+}
+
+.wave {
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+.wave-one {
+    right: -300px;
+    bottom: -350px;
+}
+
+.wave-two {
+    right: -100px;
+    bottom: -500px;
+}
+
+.drop {
+    position: absolute;
+
+    opacity: 0.3;
+    font-size: 2rem;
+
+    animation: float 5s infinite ease-in-out;
+}
+
+.drop-one {
+    right: 25%;
+    top: 35%;
+}
+
+.drop-two {
+    right: 10%;
+    top: 55%;
+
+    animation-delay: 1s;
+}
+
+.drop-three {
+    right: 40%;
+    top: 70%;
+
+    animation-delay: 2s;
+}
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 110px 30px;
+}
+
+.section-dark {
+    max-width: none;
+
+    background: #092b3a;
+    color: white;
+
+    padding-left: max(30px, calc((100% - 1140px) / 2));
+    padding-right: max(30px, calc((100% - 1140px) / 2));
+}
+
+.section-highlight {
+    max-width: none;
+
+    background: #dff6f3;
+
+    padding-left: max(30px, calc((100% - 1140px) / 2));
+    padding-right: max(30px, calc((100% - 1140px) / 2));
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 25px;
+
+    margin-bottom: 60px;
+}
+
+.section-number {
+    color: #1ba7a0;
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    padding-top: 7px;
+}
+
+.section-subtitle {
+    color: #1ba7a0;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+}
+
+.section h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+
+    line-height: 1.1;
+}
+
+
+/* =========================================
+   DOS COLUMNAS
+========================================= */
+
+.two-columns {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.text-content p {
+    margin-bottom: 22px;
+}
+
+.lead {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.fact-card {
+    padding: 45px;
+
+    border-radius: 25px;
+
+    background: white;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+.fact-icon {
+    font-size: 3rem;
+
+    margin-bottom: 20px;
+}
+
+.fact-card h3 {
+    font-size: 1.6rem;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.info-card {
+    position: relative;
+
+    padding: 35px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.05);
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+
+    background: rgba(255,255,255,0.09);
+}
+
+.card-number {
+    color: #55d6be;
+
+    font-size: 0.8rem;
+    font-weight: 800;
+
+    margin-bottom: 25px;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   EFECTOS
+========================================= */
+
+.effects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.effect {
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+
+    transition: 0.3s;
+}
+
+.effect:hover {
+    transform: translateY(-7px);
+}
+
+.effect-icon {
+    font-size: 2.5rem;
+
+    margin-bottom: 20px;
+}
+
+.effect h3 {
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   PERÚ
+========================================= */
+
+.peru-section {
+    max-width: none;
+
+    background: #eef7f8;
+
+    padding-left: max(30px, calc((100% - 1140px) / 2));
+    padding-right: max(30px, calc((100% - 1140px) / 2));
+}
+
+.peru-content {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.peru-text p {
+    margin-bottom: 20px;
+}
+
+.peru-stat {
+    padding: 50px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-radius: 25px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.07);
+}
+
+.peru-stat span {
+    display: block;
+
+    font-size: 4rem;
+
+    margin-bottom: 10px;
+}
+
+.peru-stat strong {
+    display: block;
+
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   PIURA
+========================================= */
+
+.piura-box {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 35px;
+
+    padding: 50px;
+
+    border-radius: 25px;
+
+    background: white;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.07);
+}
+
+.piura-icon {
+    font-size: 3.5rem;
+}
+
+.piura-box h3 {
+    font-size: 1.8rem;
+
+    margin-bottom: 20px;
+}
+
+.piura-box p {
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   PREVENCIÓN
+========================================= */
+
+.prevention-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.prevention-item {
+    display: flex;
+
+    gap: 25px;
+
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    border-left: 5px solid #1ba7a0;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.prevention-item > span {
+    color: #1ba7a0;
+
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.prevention-item h3 {
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   FUENTES
+========================================= */
+
+.sources {
+    padding: 100px 30px;
+
+    background: #06283d;
+
+    color: white;
+
+    text-align: center;
+}
+
+.sources-content {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.sources h2 {
+    font-size: 2.5rem;
+
+    margin-bottom: 20px;
+}
+
+.sources-content > p:not(.section-subtitle) {
+    color: rgba(255,255,255,0.75);
+
+    margin-bottom: 30px;
+}
+
+.source-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+.source-buttons a {
+    padding: 12px 25px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    border-radius: 50px;
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+.source-buttons a:hover {
+    background: white;
+
+    color: #06283d;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    padding: 30px;
+
+    background: #041b27;
+
+    color: rgba(255,255,255,0.6);
+
+    text-align: center;
+
+    font-size: 0.85rem;
+}
+
+.footer p {
+    margin: 5px;
+}
+
+
+/* =========================================
+   BOTÓN VOLVER ARRIBA
+========================================= */
+
+.back-top {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #1ba7a0;
+
+    color: white;
+
+    font-size: 1.3rem;
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 900;
+}
+
+.back-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition: 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        padding: 25px;
+
+        background: #06283d;
+
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .two-columns,
+    .peru-content {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .cards,
+    .effects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 120px 25px 70px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .section {
+        padding: 80px 20px;
+    }
+
+    .section-header {
+        gap: 15px;
+    }
+
+    .cards,
+    .effects-grid,
+    .prevention-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .piura-box {
+        grid-template-columns: 1fr;
+
+        padding: 30px;
+    }
+
+    .source-buttons {
+        flex-direction: column;
+    }
+
+    .source-buttons a {
+        width: 100%;
+    }
+
+}
